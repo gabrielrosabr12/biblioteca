@@ -13,7 +13,7 @@ public class Teste {
 
         Livro livro1 = new Livro("Moises","Java para iniciantes");
         Livro livro2 = new Livro("Creusa","Inicio em PHP");
-        Usuario user = new Aluno("10953357740","Gabriel",54);
+        Usuario user = new Aluno("34564564541","Gabriel",54);
         repo.adicionar(livro1);
         repo.adicionar(livro2);
 
