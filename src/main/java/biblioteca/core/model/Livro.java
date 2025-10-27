@@ -1,9 +1,12 @@
 package biblioteca.core.model;
 
+import biblioteca.core.util.LivroNaoEncontradoException;
+
 public class Livro {
     private String titulo;
     private String autor;
     private boolean disponivel;
+    private String isnb;
 
     public Livro(String autor, String titulo) {
         this.autor = autor;
@@ -17,6 +20,14 @@ public class Livro {
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+    public String getIsnb() {
+        return isnb;
+    }
+
+    public void setIsnb(String isnb) {
+        this.isnb = isnb;
     }
 
     public String getTitulo() {
@@ -44,6 +55,8 @@ public class Livro {
     public void devolver() {
         if(!this.isDisponivel()) {
             this.setDisponivel(true);
+        } else{
+            throw new LivroNaoEncontradoException("Livro não encontrado doidaooo");
         }
     }
 

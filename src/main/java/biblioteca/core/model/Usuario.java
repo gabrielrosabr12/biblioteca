@@ -7,14 +7,28 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class Usuario {
+public abstract class Usuario {
     private String nome;
     private String cpf;
+    private int id;
     Set<Livro> livros = new HashSet<>();
+    private int limiteEmprestimos;
 
-    public Usuario(String cpf, String nome) {
+    public Usuario(String cpf, String nome,int limiteEmprestimos,int id) {
         this.cpf = cpf;
         this.nome = nome;
+        this.limiteEmprestimos = limiteEmprestimos;
+        this.id = id;
+    }
+
+    public int getLimiteEmprestimos() {
+        return limiteEmprestimos;
+    }
+
+    public abstract void mostrarTipo();
+
+    public void setLimiteEmprestimos(int limiteEmprestimos) {
+        this.limiteEmprestimos = limiteEmprestimos;
     }
 
     public String getCpf() {
